@@ -1,0 +1,60 @@
+.container-minicart {
+    position: relative;
+}
+
+.container-minicart>button>svg,
+.container-minicart>button {
+    cursor: pointer;
+}
+
+.mini-cart {
+    position: absolute;
+    right: -22px;
+    top: 48px;
+    background: white;
+    width: 100%;
+    min-width: 417px;
+    height: calc(100vh - 80px);
+    z-index: 1;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    transform: translateY(-200%);
+}
+
+.mini-cart.visible {
+    opacity:1;
+    transform: translateY(0%);
+    transition: opacity 0.2s ease-in-out;
+}
+
+.mini-cart ul {
+    max-height: 500px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-cart ul>li{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 350px;
+}
+
+.container-minicart-button {
+    margin-right: 16px;
+}
+
+.container-minicart .mini-cart.visible::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    color: transparent;
+    height: 50px;
+    width: 100%;
+    min-width: 417px;
+    right: -20px;
+    top: -35px;
+}

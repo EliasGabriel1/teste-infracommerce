@@ -1,0 +1,215 @@
+.item-product {
+    position: relative;
+    top: 1px;
+}
+
+.Card__product-image>img {
+    min-height: 210px;
+}
+
+.Card__comprar {
+    margin-top: 10px;
+    background-color: black;
+    -webkit-transition: background-color .5s ease-in-out;
+    transition: background-color .5s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.Card__comprar>button {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 16px;
+    line-height: 15.96px;
+    letter-spacing: 0.04em;
+    color: white;
+}
+
+.Card__product-price,
+.Card__product-info-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Card__product-brand {
+    font-family: 'Montserrat';
+    margin-right: 4px;
+    font-size: .875rem;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000;
+    cursor: pointer;
+}
+
+.Card__product-name {
+    font-family: 'Montserrat';
+    font-size: .875rem;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: start;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.Card__product-image {
+    cursor: pointer;
+}
+
+.Card__product-list-price {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration-line: line-through;
+    color: #0C0C0C;
+    margin: 8px 0;
+}
+
+.Card__product-best-price {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15.96px;
+    color: #FFF;
+}
+
+
+.Card__flags>.flag {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    position: absolute;
+}
+
+.Card__flags>.flag:first-child {
+    border-radius: 50%;
+    color: white;
+    background: red;
+    width: fit-content;
+    padding: 5px;
+    right: 2px;
+    top: 3px;
+}
+
+.Card__flags>.flag:last-child {
+    background-color: #000000;
+    padding: 5px 10px;
+    white-space: nowrap;
+    width: fit-content;
+    right: 0;
+    top: 32px;
+}
+
+.list-products .item-product {
+    max-width: 22.4vw;
+}
+
+.Card__favorite{
+    cursor: pointer;
+    position: absolute;
+    left: 42px;
+    top: 35px;
+}
+
+@media screen and (min-width: 900px) {
+    .Card__product-info {
+        display: none;
+    }
+
+    .Card__comprar {
+        display: none;
+
+    }
+
+    .item-product:hover>.box-item>.Card__link {
+        padding: 32px 32px 16px;
+    }
+
+    .item-product:hover .Card__product-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-product:hover .box-item {
+        border-style: solid;
+        border-width: 1px 1px 0 1px;
+        border-color: #000;
+    }
+
+    .item-product:hover .box-item>.Card__content_product {
+        width: 100.4%;
+        left: 0%;
+        max-width: 22.4vw;
+        height: auto;
+        position: absolute;
+        padding-bottom: 0;
+        background-color: #fff;
+        z-index: 4;
+        border-style: solid;
+        border-width: 0 1px 1px 1px;
+        border-color: #000;
+    }
+
+    .item-product:hover .Card__comprar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Card__comprar:hover {
+        background-color: #81d8d0;
+        -webkit-transition: background-color .5s ease-in-out;
+        transition: background-color .5s ease-in-out;
+        border: 1px solid #000;
+        margin: 0 32px 30px;
+    }
+
+    .Card__comprar:hover .Card__product-best-price,
+    .Card__comprar:hover>button {
+        color: #0C0C0C;
+    }
+
+    .Card__comprar {
+        margin: 0 32px 30px;
+    }
+
+    .Card__product-name {
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .list-products .item-product {
+        max-width: 45vw;
+    }
+
+    .Card__product-name {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
