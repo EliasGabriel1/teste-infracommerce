@@ -34,6 +34,10 @@ a.group-text__link {
     height: fit-content;
 }
 
+.loveyourWay.container.banner-bg{
+    background-repeat: no-repeat;
+}
+
 
 .container.banner-bg>.container-patter {
     display: flex;
