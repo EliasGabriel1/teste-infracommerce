@@ -101,7 +101,7 @@ body.block {
     }
 }
 
-@media screen and (min-width: 1550px) {
+@media screen and (max-width: 1550px) {
 
     body.block::after {
         content: "";
