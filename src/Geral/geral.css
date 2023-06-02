@@ -41,17 +41,6 @@ body.block {
     overflow: hidden;
 }
 
-body.block::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    right: 418px;
-    background: rgba(0, 0, 0, .5);
-    width: calc(100vw - 418px);
-    height: 100vh;
-    z-index: 1000;
-}
-
 .icon-dropdown-right::before {
     position: relative;
     content: "";
@@ -98,7 +87,7 @@ body.block::after {
         color: #000000;
     }
 
-    .box-blocks >.footer__block-left{
+    .box-blocks>.footer__block-left {
         padding-bottom: 24px;
     }
 
@@ -109,6 +98,20 @@ body.block::after {
     .MidBanners>.list-products a,
     .MidBanners>.list-products h4 {
         padding-left: 24px;
+    }
+}
+
+@media screen and (min-width: 1550px) {
+
+    body.block::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 418px;
+        background: rgba(0, 0, 0, .5);
+        width: calc(100vw - 418px);
+        height: 100vh;
+        z-index: 1000;
     }
 }
 
