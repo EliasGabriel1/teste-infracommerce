@@ -3,10 +3,10 @@ import { useWindowSize } from "../../../Hooks/useWindowSize";
 import BlockLinks from "./BlockLinks";
 
 function LinksFooter() {
-    const [open, setOpen] = useState(false);
-    const [openDois, setOpenDois] = useState(false);
+    const [open, setOpen] = useState(true);
+    const [openDois, setOpenDois] = useState(true);
     const window = useWindowSize();
-    
+
     return (
         <div className="container-blocks">
             <div className="box-blocks">
@@ -20,7 +20,7 @@ function LinksFooter() {
                         document.querySelector(".mobile")!.classList.toggle('fixed');
                     }}>
                         <h4>Our Company</h4>
-                        <div className={`${open === true ? 'mobile footer-open' : "mobile footer-close"}`}>
+                        <div className={`${window.width && window.width > 900 ? (open === true ? 'mobile footer-open' : "mobile footer-close") : open === true ? 'mobile footer-close' : "mobile footer-open"}`}>
                             <BlockLinks block="block2" />
                         </div>
                     </div>
@@ -29,7 +29,7 @@ function LinksFooter() {
                         document.querySelector(".mobile")!.classList.toggle('fixed');
                     }}>
                         <h4>Related Tiffany Sites</h4>
-                        <div className={`${openDois === true ? 'mobile footer-open' : "mobile footer-close"}`}>
+                        <div className={`${window.width && window.width > 900 ? (openDois === true ? 'mobile footer-open' : "mobile footer-close") : openDois === true ? 'mobile footer-close' : "mobile footer-open"}`}>
                             <BlockLinks block="block3" />
                         </div>
                     </div>
