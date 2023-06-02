@@ -99,6 +99,11 @@ body.block {
     .MidBanners>.list-products h4 {
         padding-left: 24px;
     }
+
+    body.block::after {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 1600px) {
