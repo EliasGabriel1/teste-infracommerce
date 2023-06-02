@@ -100,10 +100,12 @@ body.block {
         padding-left: 24px;
     }
 
+}
+
+@media screen and (max-width: 1000px) {
     body.block::after {
         display: none;
     }
-
 }
 
 @media screen and (max-width: 1600px) {
