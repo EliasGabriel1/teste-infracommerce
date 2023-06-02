@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Santral Light', sans-serif;
+    font-family: 'Santral Light','Sterling Display', sans-serif;
 }
 
 
@@ -10,7 +10,7 @@
     font-family: 'Santral Light';
     font-style: normal;
     font-weight: normal;
-    src: local('Santral Light'), url('Taner Ardali - Santral-Light.woff') format('woff');
+    src: local('Santral Light'), url('./fontes/Taner Ardali - Santral-Light.woff') format('woff');
 }
 
 
@@ -18,7 +18,49 @@
     font-family: 'Santral Light Italic';
     font-style: normal;
     font-weight: normal;
-    src: local('Santral Light Italic'), url('Taner Ardali - Santral-LightItalic.woff') format('woff');
+    src: local('Santral Light Italic'), url('./fontes/Taner Ardali - Santral-LightItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Santral bold';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Santral bold'), url('./fontes/Santral-Bold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Sterling Display';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Sterling Display'), url('./fontes/FTSterlingTrialVF-BF642639dd89594.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Sterling Display Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Sterling Display Regular'), url('./fontes/FTSterlingTrial-Regular-BF642639dd9d5de.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Sterling Display Medium';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Sterling Display medium'), url('./fontes/FTSterlingTrial-Medium-BF642639dd2d2c2.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Sterling Display Light';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Sterling Display Light'), url('./fontes/FTSterlingTrial-Light-BF642639dd8f7cb.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Sterling Display Light Italic';
+    font-style: italic;
+    font-weight: 200;
+    src: local('Sterling Display Light Italic'), url('./fontes/FTSterlingTrial-Light-BF642639dd8f7cb.woff') format('woff');
 }
 
 input:focus-visible {
@@ -141,6 +183,21 @@ button {
     to {
         position: absolute;
         right: 0%;
+        width: 100%;
+    }
+}
+
+
+@keyframes slideOnTop {
+    from {
+        position: absolute;
+        top: 30%;
+        width: 100%;
+    }
+
+    to {
+        position: absolute;
+        top: 0%;
         width: 100%;
     }
 }

@@ -1,7 +1,7 @@
 .block1>h4,
 .block2>h4,
 .block3>h4 {
-    font-family: 'Santral Light', sans-serif;
+    font-family: 'Santral bold', sans-serif;
     font-size: .875rem;
     color: #000;
     line-height: 24px;
@@ -113,12 +113,12 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    font-family: Santral W01;
     font-weight: 300;
     font-style: normal;
 }
 
 .button-signup {
+    font-family: 'Santral bold', sans-serif;
     padding: 8px 52px;
     max-height: none;
     height: auto;
@@ -131,6 +131,7 @@
 }
 
 .Footer__ListBreadCrumb {
+    font-family: 'Santral bold', sans-serif;
     font-size: .875rem;
     color: #000;
     line-height: 1.71;
@@ -141,9 +142,26 @@
     text-align: center;
 }
 
+.mobile.footer-open {
+    position: relative;
+    overflow: auto;
+    animation-duration: 500ms;
+    animation-name: slideOnTop;
+}
+
+.mobile.footer-close {
+    display: none;
+}
+
+.eventnone {
+    position: relative;
+    display: inline-block;
+    pointer-events: none;
+}
+
 @media screen and (max-width: 900px) {
-   
-    .block4  .BlockLinks {
+
+    .block4 .BlockLinks {
         padding-left: 0;
     }
 
@@ -155,14 +173,19 @@
         padding-left: 30px;
     }
 
+    .block2>h4,
+    .block3>h4 {
+        padding-top: 24px;
+    }
+
     .block1,
     .block2,
     .block3 {
         padding-left: 16px;
     }
 
-    .block4>h4, 
-    .block4>.BlockLinks> :not(.footer__socials){
+    .block4>h4,
+    .block4>.BlockLinks> :not(.footer__socials) {
         display: none;
     }
 

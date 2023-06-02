@@ -37,8 +37,8 @@ const CarrosselBanner = (props: any) => {
                     {props.text ? <h3>{props.text}</h3> : ""}
                     {props.description ? <p>{props.description}</p> : ""}
                     <div className="product-carousel-slide list-products">
-                        {currentProducts.map((item: any) => (
-                            <picture key={item.index}>
+                        {currentProducts.map((item: any, index:number) => (
+                            <picture key={index}>
                                 <img src={item.href} alt="" width={"100%"} />
                                 {item.text ? <h4 className="text">{item.text}</h4> : ""}
                                 {item.description ? <h4 className="description">{item.description}</h4> : ""}

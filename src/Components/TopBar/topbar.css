@@ -1,57 +1,45 @@
 .topbar {
-    padding: 10px 0;
-    color: white;
-    background: black;
-    font-weight: bold;
-}
-
-.topbar>.justify-center {
+    padding: 10px 14px;
+    color: black;
     display: flex;
+    background-color: #81d8d0;
+    justify-content: space-between;
     align-items: center;
-    justify-self: center;
 }
 
-.topbar p {
-    font-family: 'Inter';
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    color: #FFFFFF;
-}
-
-.topbar p span {
-    margin-left: 10px;
-    margin-right: 13px;
+.shop-at-us{
+    font-style:normal;
     text-decoration: underline;
-    font-family: 'Inter';
-    text-decoration-line: underline;
-}
-
-.topbar a {
-    padding: 11px 42px;
-    background: #FFFFFF;
-    border-radius: 5px;
-    font-family: 'Roboto';
+    font-weight: 400;
     font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.9px;
-    color: #2E2E2E;
+    font-size: .875rem;
 }
 
-.button-previous {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translatey(-50%);
-    margin-left: 25px;
+.topbar__groupshop-shop-at-us{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
 }
 
-.button-next {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translatey(-50%);
-    margin-right: 25px;
+.topbar__groupshop-shop-at-us .links{
+    font-size: .875rem;
+}
+
+.shop-at-us__or{
+    font-size: .875rem;
+    color: #000;
+    line-height: 1.71;
+    letter-spacing: normal;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.topbar>div>p{
+    font-size: .875rem;
+    color: #000;
+    line-height: 1.71;
+    letter-spacing: normal;
+    font-weight: 300;
+    font-style: normal;
 }

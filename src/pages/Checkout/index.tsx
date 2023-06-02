@@ -1,6 +1,14 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../../Context/AppContext";
-// import "./checkout.css";
+import "./checkout.css";
+
+interface MergedProductItem {
+  imageProduct: string;
+  productName: string;
+  Price: number;
+  quantidade: number;
+}
+
 
 function Checkout(): JSX.Element {
   const { cart, clearCart } = useContext(AppContext);
@@ -15,6 +23,35 @@ function Checkout(): JSX.Element {
   //   atualizarCart(itemId, value);
   // }
 
+
+  const mergeDuplicateItems = (data: any[]): any[] => {
+    const mergedItems: { [key: string]: any } = {};
+    data.forEach((group) => {
+      group.forEach((item: any) => {
+        const { productId, quantidade } = item;
+        if (mergedItems[productId]) {
+          mergedItems[productId].quantidade += quantidade;
+        } else {
+          mergedItems[productId] = { ...item };
+        }
+      });
+    });
+    const mergedArray = Object.values(mergedItems);
+    return mergedArray;
+  };
+
+  const mergedProductItems = mergeDuplicateItems(cart);
+  const sumTotal = (data: any) => {
+    let valorTotal = 0;
+
+    for (const item of data) {
+      for (const produto of item) {
+        valorTotal += produto.Price;
+      }
+    }
+    return valorTotal.toFixed(2);
+  }
+
   return (
     <div className="checkout">
       <h1>CARRINHO DE COMPRAS</h1>
@@ -22,29 +59,25 @@ function Checkout(): JSX.Element {
         <>
           <ul>
             {cart.length > 0 ? (
-              cart.map((item: any, index: number) => (
+              mergedProductItems.map((item: MergedProductItem, index: number) => (
                 <li key={index}>
                   <img alt="" width="200px" src={item.imageProduct} />
-                  {item.productName} - R${item.Price}
-                  quantidade: {item.quantidade}
-                  {/* <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    min={1}
-                    max={10}
-                    onChange={(e) => handleChange(item.id, e.target.valueAsNumber)}
-                  /> */}
+                  {item.productName} <br /> <br /> ${item.Price} <br />
+                  Quantity: {item.quantidade} <br />
                 </li>
               ))
+
             ) : (
               <div className="carrinhovazio">O CHECKOUT ESTÁ VAZIO</div>
             )}
           </ul>
           {cart.length > 0 ? (
-            <button className="encerrar-compra-checkout" onClick={handleCompraFeita}>
-              ENCERRAR COMPRA
-            </button>
+            <div >
+              <p className="total-checkout"> O valor do seu carrinho o total é <span className="checkout-redColor">${sumTotal(cart)}</span></p>
+              <button className="encerrar-compra-checkout" onClick={handleCompraFeita}>
+                ENCERRAR COMPRA
+              </button>
+            </div>
           ) : null}
         </>
       ) : (

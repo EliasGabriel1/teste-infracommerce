@@ -1,7 +1,7 @@
 import { useWindowSize } from "../../Hooks/useWindowSize";
 import "./Stories.css";
 
-function BannerFinal({ className, title, textLink, data }: any) {
+function Stories({ className, title, data, icon }: any) {
     const window = useWindowSize();
 
     return (
@@ -9,45 +9,59 @@ function BannerFinal({ className, title, textLink, data }: any) {
             (
                 <div className={className ? className + " container banner-bg" : "container"}>
                     {title ? <h2>{title}</h2> : ""}
-                    {data.map((item: any) => (
-                        <div className="card">
-                            {
-                                item.image ? (
+                    <div className="stories__content-cards container-patter">
+                        {data.map((item: {
+                            image: boolean;
+                            href: string;
+                            title: string;
+                            description: string;
+                            link: string;
+                            linkText: string;
+                        },index: number) => (
+                            <div className="stories__card" key={index}>
+                                {item.image ? (
                                     <picture>
-                                        <img src={item.href} alt="" width={"100%"} />
+                                        <img className="stories__image" src={item.href} alt="" width={"100%"} />
                                     </picture>
-                                )
-                                    : ""
-                            }
-                            <h4 className="title">{item.name}</h4>
-                            <h5 className="description">
-                                {item.description}
-                            </h5>
-                            <a href={item.Link} className="links">item.{textLink}</a>
-                        </div>
-                    ))}
+                                ) : null}
+                                <div className="stories__box-text">
+                                    <h4 className="stories__title">{item.title}</h4>
+                                    <p className="stories__description">
+                                        {item.description}
+                                    </p>
+                                    <a href={item.link} className="links">
+                                        {item.linkText}
+                                        {icon === true ? <span className="icon-dropdown-right"></span> : ""}
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             )
             :
             (
                 <div className={className ? className + "container" : "container"}>
                     {title ? <h2>{title}</h2> : ""}
-                    {data.map((item: any) => (
-                        <div className="card">
-                            {
-                                item.image ? (
+                    <div className="stories__content-cards container-patter">
+                        {data.map((item: {
+                            image: boolean;
+                            href: string;
+                            title: string;
+                        },index: number) => (
+                            <div className="stories__card" key={index}>
+                                {item.image ? (
                                     <picture>
-                                        <img src={item.href} alt="" width={"100%"} />
+                                        <img className="stories__image" src={item.href} alt="" width={"100%"} />
                                     </picture>
-                                )
-                                    : ""
-                            }
-                            <h4>{item.name}</h4>
-                        </div>
-                    ))}
+                                ) : null}
+                                <h4 className="stories__title">{item.title}</h4>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             )
     );
 }
 
-export default BannerFinal;
+export default Stories;

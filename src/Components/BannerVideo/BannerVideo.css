@@ -50,15 +50,22 @@
     z-index: 48;
 }
 
+.button-video-mid>span::before{
+    padding-top: 1px;
+}
+
 .box-video-mid>a {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
-    line-height: 0px;
 }
 
 .box-video-mid>p {
     padding-top: 10px;
     padding-bottom: 14px;
+    font-weight: 300;
+    font-size: .875rem;
+    line-height: 24px;
+    text-align: left;
 }
 
 .box-video-mid {
@@ -66,7 +73,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    max-width: 70%;
+    max-width: 73%;
     margin: 0 auto;
 }
 
@@ -106,6 +113,7 @@
     }
 
     .box-video-mid h2 {
+        font-family: 'Santral bold', sans-serif;
         font-weight: 600;
         font-style: normal;
         font-size: 1.5rem;

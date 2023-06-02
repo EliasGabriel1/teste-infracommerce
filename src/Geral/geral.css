@@ -16,26 +16,6 @@
     margin-top: 110px;
 }
 
-.carrinhovazio {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 200px;
-}
-
-h5.encerrar-compra.cursor-pointer {
-    text-align: center;
-    height: 36px;
-    background: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
 .links {
     display: inline-block;
     margin: 0;
@@ -93,11 +73,11 @@ body.block::after {
 }
 
 @media screen and (max-width: 900px) {
-    .MidBanners.container-patter{
+    .MidBanners.container-patter {
         padding: 0;
     }
 
-    .MidBanners .list-products>picture{
+    .MidBanners .list-products>picture {
         max-width: fit-content;
         align-items: start;
     }
@@ -118,12 +98,8 @@ body.block::after {
         color: #000000;
     }
 
-    .box-blocks {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    .box-blocks >.footer__block-left{
+        padding-bottom: 24px;
     }
 
     .container-cards {

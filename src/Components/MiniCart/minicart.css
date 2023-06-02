@@ -10,13 +10,13 @@
 .mini-cart {
     position: absolute;
     right: -22px;
-    top: 48px;
+    top: 33px;
     background: white;
     width: 100%;
     min-width: 417px;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 65px);
     z-index: 1;
-    padding: 15px;
+    padding: 2.5vw 16px 0 2.5vw;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius: 3px;
     opacity: 0;
@@ -25,19 +25,19 @@
 }
 
 .mini-cart.visible {
-    opacity:1;
+    opacity: 1;
     transform: translateY(0%);
     transition: opacity 0.2s ease-in-out;
 }
 
 .mini-cart ul {
-    max-height: 500px;
+    max-height: 66vh;
     overflow: auto;
     display: flex;
     flex-direction: column;
 }
 
-.mini-cart ul>li{
+.mini-cart ul>li {
     display: flex;
     flex-wrap: wrap;
     max-width: 350px;
@@ -57,4 +57,197 @@
     min-width: 417px;
     right: -20px;
     top: -35px;
+}
+
+.carrinhovazio {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 200px;
+    flex-direction: column;
+}
+
+.carrinhovazio>span {
+    font-size: .875rem;
+    padding-top: 10px;
+    line-height: 24px;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 32px;
+}
+
+.carrinhovazio>h3 {
+    visibility: visible;
+    font-size: 2rem;
+    color: #323232;
+    line-height: 1.5;
+    font-family: 'Sterling Display';
+    font-weight: 200;
+    font-style: normal;
+    margin: 7vw 0 0;
+}
+
+.carrinhovazio>p {
+    padding-bottom: 8px;
+    font-size: .875rem;
+    line-height: 1.71;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.carrinhovazio>a {
+    font-size: .875rem;
+    color: #000;
+    line-height: 1.71;
+    font-weight: bold;
+    font-style: normal;
+    outline: 0;
+    border: 1px solid transparent;
+    display: inline-block;
+}
+
+.minicart__d-flex {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 32px 0;
+    margin-right: 6px;
+    border-bottom: 1px solid #81d8d0;
+}
+
+.mini-cart ul>li:first-child .minicart__d-flex {
+    padding-top: 0;
+}
+
+.minicart__d-flex>picture {
+    flex-basis: 168px;
+    max-width: 100%;
+    min-height: 1px;
+    min-width: 1px;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    height: auto;
+}
+
+.minicart__d-flex>.minicart__items-product {
+    flex-basis: 232px;
+    padding-left: 24px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.minicart__d-flex .minicart__description-item {
+    white-space: break-spaces;
+}
+
+.minicart__d-flex .minicart__description-remove {
+    width: fit-content;
+}
+
+.minicart__box-signin {
+    padding-bottom: 32px;
+}
+
+.minicart__box-signin a {
+    font-weight: 400;
+    font-style: normal;
+    font-size: .875rem;
+    color: #000;
+    line-height: 1.71;
+    outline: 0;
+    border: 1px solid transparent;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.minicart__box-signin p {
+    padding-bottom: 8px;
+    font-size: .875rem;
+    line-height: 1.71;
+}
+
+.minicart__description-item {
+    font-family: 'Sterling Display', 'Santral Light', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: .875rem;
+    color: #000;
+    line-height: 1.71;
+    outline: 0;
+    border: 1px solid transparent;
+}
+
+.minicart__description-price {
+    font-weight: 300;
+    font-size: .75rem;
+    padding-top: 8px;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+.minicart__description-quantidade {
+    line-height: 1.5;
+    margin-bottom: 16px;
+    font-size: .75rem;
+    font-style: normal;
+}
+
+.minicart__description-remove {
+    line-height: 1.5;
+    margin-bottom: 16px;
+    font-size: .75rem;
+    font-style: normal;
+}
+
+
+h5.encerrar-compra {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 600;
+    padding: 16px;
+    font-size: .875rem;
+    letter-spacing: 0.04em;
+    line-height: 1.14;
+    color: white;
+    background-color: #000;
+    padding: 20px 32px;
+    background-color: #000;
+    outline: 0;
+}
+
+
+h5.encerrar-compra:hover {
+    background-color: #81d8d0;
+    -webkit-transition: background-color .5s ease-in-out;
+    transition: background-color .5s ease-in-out;
+    border: 1px solid #000;
+    color: black;
+}
+
+h5.encerrar-compra:hover .encerrar-compra-total {
+    color: black;
+}
+
+.colorirBag{
+    position: relative;
+}
+
+.colorirBag.container-minicart-button::after{
+    content: "";
+    position: absolute;
+    background: #81d8d0;
+    height: 9px;
+    width: 10px;
+    top: 6px;
+    left: 3px;
+    display: block;
 }

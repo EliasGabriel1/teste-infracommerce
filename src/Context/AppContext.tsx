@@ -2,7 +2,7 @@ import React, { useState, createContext } from "react";
 
 interface State {
     items: Array<any>;
-    user: any | null;
+    user: string | null;
 }
 
 export interface Props {
@@ -48,7 +48,7 @@ export interface Props {
 
 
 interface Item {
-    productId: any;
+    productId: string;
     productName: string;
     productBrand: string;
     productDescription: string;
@@ -67,7 +67,7 @@ interface AppContextProps {
     addFav: (item: Item) => void;
     removeItemFromCart: (itemId: string) => void;
     removeFav: (itemId: string) => void;
-    login: (user: any) => void;
+    login: (user: string) => void;
     logout: () => void;
     cart: Array<Item>;
     setCart: (cart: Array<Item>) => void;
@@ -88,7 +88,7 @@ export const AppContext = createContext<AppContextProps>({
     addFav: (item: Item) => { },
     removeItemFromCart: (itemId: string) => { },
     removeFav: (itemId: string) => { },
-    login: (user: any) => { },
+    login: (user: string) => { },
     logout: () => { },
     cart: [],
     setCart: (cart: Array<Item>) => { },
@@ -110,8 +110,6 @@ function AppProvider(props: any) {
 
     const [Product, setProduct] = useState<Array<any>>([]);
 
-    console.log(cart)
-    
     const addFav = (item: Item) => {
         setFav((prevFav) => [...prevFav, item]);
     };
@@ -157,19 +155,19 @@ function AppProvider(props: any) {
 
     const removeItemFromCart = (productId: string) => {
         setCart((prevCart) => {
-            const updatedCart = prevCart.filter((group:any) => {
-              const item = group[0];
-              return item.productId !== productId;
+            const updatedCart = prevCart.filter((group: any) => {
+                const item = group[0];
+                return item.productId !== productId;
             });
             return updatedCart;
-          });
+        });
     };
 
     const clearCart = () => {
         setCart([]);
     };
 
-    const login = (user: any) => {
+    const login = (user: string) => {
         setState((prevState) => ({ ...prevState, user }));
     };
 

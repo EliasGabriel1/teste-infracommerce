@@ -3,12 +3,13 @@ import { VitrineProps } from "../../Components/Vitrine";
 import ShelfCustom from "../../Components/Shelf";
 import "./home.css";
 import Footer from "../../Components/Footer";
-// import TopBar from "../../Components/TopBar";
 import Header from "../../Components/Header";
 import BannerVideo from "../../Components/BannerVideo";
 import CarrosselBanner from "../../Components/CarrosselBanner";
 import BannerFinal from "../../Components/BannerFinal";
+import Stories from "../../Components/Stories";
 import ContainerBannerMid from "../../Components/ContainerBannerMid";
+import TopBar from "../../Components/TopBar"
 
 interface HomeProps { }
 
@@ -58,7 +59,7 @@ const Home: React.FC<HomeProps> = () => {
         });
     }, []);
 
-    const CarroselMiniBanners: any = [
+    const CarroselMiniBanners= [
         {
             "productId": "4378",
             "href": "https://media.tiffany.com/is/image/Tiffany/EcomBrowseM/tiffany-hardweargraduated-link-necklace-38086766_1025207_ED.jpg?&defaultImage=NoImageAvailableInternal&&defaultImage=NoImageAvailableInternal&fmt=webp",
@@ -109,7 +110,7 @@ const Home: React.FC<HomeProps> = () => {
         }
     ]
 
-    const MidBanners: any = [
+    const MidBanners= [
         {
             "productId": "4378",
             "href": "https://media.tiffany.com/is/image/tiffanydm/QuickLink-HP-50-50-Product-StudEarrings-Desktop?$tile$&wid=1088&hei=1360&fmt=webp",
@@ -128,7 +129,7 @@ const Home: React.FC<HomeProps> = () => {
         }
     ]
 
-    const ShopbyCategory: any = [
+    const ShopbyCategory= [
         {
             "productId": "4378",
             "href": "https://media.tiffany.com/is/image/tiffanydm/Necklace_op3?$tile$&&fmt=webp",
@@ -179,7 +180,34 @@ const Home: React.FC<HomeProps> = () => {
         }
     ]
 
-    const TiffanyExperience: any = [
+    const StoriesData= [
+        {
+            "image": "true",
+            "href": "https://media.tiffany.com/is/image/tiffanydm/BeyonceTour-HP-Stories?$tile$&wid=736&hei=920",
+            "link": "https://www.tiffany.com/stories/beyonce-renaissance-world-tour-jewelry/",
+            "linkText": "Learn More",
+            "title": "Beyoncé Tours in Tiffany & Co.",
+            "description": 'The House is the official jeweler for the RENAISSANCE WORLD TOUR.',
+        },
+        {
+            "image": "true",
+            "href": "https://media.tiffany.com/is/image/tiffanydm/LOCK-HP-WhatIsNew-Desktop-1?$tile$&wid=736&hei=920&fmt=webp",
+            "link": "https://www.tiffany.com/jewelry/shop/tiffany-t/",
+            "linkText": "Explore the Collection ",
+            "title": "Tiffany Lock",
+            "description": 'No rules. All welcome.',
+        },
+        {
+            "image": "true",
+            "href": "https://media.tiffany.com/is/image/tiffanydm/T-HP-WhatIsNew-Desktop-JIMIN?$tile$&wid=736&hei=920&fmt=webp",
+            "link": "https://www.tiffany.com/jewelry/shop/tiffany-t/",
+            "linkText": "Learn More",
+            "title": "This Is Tiffany T",
+            "description": 'Our favorite letter, everyone’s favorite collection. ',
+        }
+    ]
+
+    const TiffanyExperience= [
         {
             "href": "https://i.postimg.cc/15Cnsp4C/carta.jpg",
             "link": "https://www.tiffany.com/faq/#shipping-returns-faq/",
@@ -214,21 +242,30 @@ const Home: React.FC<HomeProps> = () => {
         }
     ]
 
-    const url: any = "https://media.tiffany.com/is/image/tiffanydm/2023_GW-HP-FWMH-Desktop?$tile$&wid=2992&fmt=webp";
-    const url2: any = "https://media.tiffany.com/is/image/tiffanydm/2021_Bloomgberg-HP_FWMH-Desktop2?$tile$&wid=2992&fmt=webp";
+    const loveyourWay={
+        "imagedesktop": "https://media.tiffany.com/is/image/tiffanydm/2023_GW-HP-FWMH-Desktop?$tile$&wid=2992&fmt=webp",
+        "imagemobile": "https://media.tiffany.com/is/image/tiffanydm/2023_GW-HP-FWMH-Mobile?$tile$&wid=720&fmt=webp",
+    }
+
+    const fromthesource={
+        "imagedesktop": "https://media.tiffany.com/is/image/tiffanydm/2021_Bloomgberg-HP_FWMH-Desktop2?$tile$&wid=2992&fmt=webp",
+        "imagemobile": "https://media.tiffany.com/is/image/tiffanydm/2021_Bloomgberg-HP_FWMH-Mobile?$tile$&wid=720&fmt=webp",
+    }
+
 
     return (
         <>
+            <TopBar />
             <Header data={data} loading={loading} error={error} />
-            {/* <TopBar /> */}
             <BannerVideo />
             <CarrosselBanner data={CarroselMiniBanners} buttonClassName="shop-now" buttonText="Shop Now" buttonHref="/shop-now" quantidadeItemMobile={2} quantidadeItem={4} />
             <CarrosselBanner icon={true} className="MidBanners" data={MidBanners} quantidadeItemMobile={1} quantidadeItem={4} />
             <ShelfCustom data={data} error={error} loading={loading} text="" quantidadeItemMobile={2} quantidadeItem={4} />
             <CarrosselBanner className="ShopbyCategory" data={ShopbyCategory} text="Shop by Category" description="Brilliant design and unparalleled craftsmanship." quantidadeItemMobile={2} quantidadeItem={6} />
-            <ContainerBannerMid/>
-            <BannerFinal icon={true} flexDirection="flex-end" url={url} className="loveyourWay" title="Love Your Way" description="You’ll know who it’s for. You’ll know when it’s time. You’ll just know." textLink="Explore Love & Engagement" Link="https://www.tiffany.com/engagement/"/>
-            <BannerFinal icon={true} flexDirection="flex-start" url={url2} className="fromthesource" title="From the Source" description="Handcrafting the world’s best diamonds starts with knowing where they come from. We proudly trace 100% of our rough diamonds to known mines and sources." textLink="Follow Your Diamond’s Journey" Link="https://www.tiffany.com/engagement/diamond-provenance/"/>
+            <ContainerBannerMid />
+            <Stories icon={true} className="Stories" title="Stories" data={StoriesData} />
+            <BannerFinal icon={true} flexDirection="flex-end" url={loveyourWay} className="loveyourWay" title="Love Your Way" description="You’ll know who it’s for. You’ll know when it’s time. You’ll just know." textLink="Explore Love & Engagement" Link="https://www.tiffany.com/engagement/" />
+            <BannerFinal icon={true} flexDirection="flex-start" url={fromthesource} className="fromthesource" title="From the Source" description="Handcrafting the world’s best diamonds starts with knowing where they come from. We proudly trace 100% of our rough diamonds to known mines and sources." textLink="Follow Your Diamond’s Journey" Link="https://www.tiffany.com/engagement/diamond-provenance/" />
             <ShelfCustom data={vitrineDois} error={errorVitrineDois} loading={loadingVitrineDois} text="" quantidadeItemMobile={2} quantidadeItem={4} />
             <CarrosselBanner icon={true} className="TiffanyExperience" data={TiffanyExperience} text="The Tiffany Experience" quantidadeItemMobile={1} quantidadeItem={4} />
             <Footer />

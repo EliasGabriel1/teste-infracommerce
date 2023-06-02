@@ -1,9 +1,15 @@
-function index(props: any) {
+import React from 'react';
+
+interface IndexProps {
+  classname?: string;
+}
+
+const Index: React.FC<IndexProps> = (props) => {
   return (
-    <div className = {`Footer__ListBreadCrumb ${props.classname?props.classname:""}`}>
+    <div className={`Footer__ListBreadCrumb ${props.classname ? props.classname : ''}`}>
       <p>Home</p>
     </div>
   );
 }
 
-export default index;
+export default Index;

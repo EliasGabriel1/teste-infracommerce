@@ -31,6 +31,8 @@ function Menu(props: MenuProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isBlock, setisBlock] = useState(false);
 
+  const window = useWindowSize();
+  
   const handleMouseEnter: MinicartProps["onMouseEnter"] = () => {
     setIsHovered(true);
     document.body.classList.add("block");
@@ -41,7 +43,6 @@ function Menu(props: MenuProps) {
     document.body.classList.remove("block");
   };
 
-  const window = useWindowSize();
 
   useEffect(() => {
     fetch("./api/Menu.json", {

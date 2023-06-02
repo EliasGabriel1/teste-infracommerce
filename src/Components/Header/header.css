@@ -115,7 +115,7 @@ header .menu {
 
 header .desktop .subcategoria {
     position: absolute;
-    top: 31.5px;
+    top: 38.5px;
     left: 50%;
     transform: translate(-50%);
     border-radius: 4px;
@@ -476,10 +476,14 @@ header.sticky {
         transform: translate(50%);
     }
 
+    .mini-cart{
+        right: -18px;
+        top: 39px;
+    }
+
     .mini-cart.visible {
-        min-width: 98vw;
-        max-width: 98vw;
-        padding: 0px;
+        min-width: 100vw;
+        max-width: 100vw;
     }
 
     .container-minicart .mini-cart.visible::before {
@@ -501,6 +505,7 @@ header.sticky {
         left: 50%;
     }
 }
+
 
 @media screen and (min-width: 900px) {
     .searchBox>.group-input input {
@@ -577,5 +582,12 @@ header.sticky {
 
     .searchBox.mobile {
         display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .searchBox.desktop>.group-input input {
+        top: 36px;
+        left: 185px;
     }
 }

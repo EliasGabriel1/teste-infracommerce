@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../Context/AppContext";
 import { useNavigate } from "react-router-dom";
 import { useWindowSize } from "../../Hooks/useWindowSize";
@@ -8,13 +8,14 @@ import "./minicart.css";
 const Minicart: React.FC = () => {
     const { cart, removeItemFromCart } = useContext(AppContext);
     const [isCartVisible, setIsCartVisible] = useState(false);
+    const [total, setTotal] = useState('');
     const navigate = useNavigate();
 
     const handleRemoveItem = (itemId: string) => {
         removeItemFromCart(itemId);
     };
 
-    const window:any = useWindowSize();
+    const window: any = useWindowSize();
 
     const MiniCartSvg: React.FC = () => {
         return (
@@ -46,6 +47,21 @@ const Minicart: React.FC = () => {
         setIsCartVisible(!isCartVisible);
     };
 
+    const sumTotal = (data:  Array<any>) => {
+        let valorTotal = 0;
+
+        for (const item of data) {
+            for (const produto of item) {
+                valorTotal += produto.Price;
+            }
+        }
+        return valorTotal.toFixed(2);
+    }
+
+    useEffect(() => {
+        setTotal(sumTotal(cart))
+    }, [cart]);
+
     const pageProduct = () => {
         setIsCartVisible(false);
         const dataStr = JSON.stringify(cart);
@@ -75,43 +91,66 @@ const Minicart: React.FC = () => {
 
     return (
         <div className="container-minicart"
-        onClick={handleClick}
-        onMouseEnter={window.width && window.width  > 900  ? handleMouseEnter : undefined}
-        onMouseLeave={window.width && window.width  > 900  ? handleMouseLeave : undefined}
+            onClick={handleClick}
+            onMouseEnter={window.width && window.width > 900 ? handleMouseEnter : undefined}
+            onMouseLeave={window.width && window.width > 900 ? handleMouseLeave : undefined}
         >
-            <button className="container-minicart-button">
+            <button className={`container-minicart-button ${cart.length > 0 ? "colorirBag" : ""}`}>
                 <MiniCartSvg />
             </button>
             <div className={`mini-cart ${isCartVisible ? "visible" : ""}`}>
-                <h3>Meu Carrinho</h3>
+                {cart.length > 0 ? (
+                    <div className="minicart__box-signin">
+                        <p>To speed up the checkout process, sign in now.</p>
+                        <a href="/signIn" className="links">Sign In<span className="icon-dropdown-right"></span></a>
+                    </div>
+                ) : (
+                    ""
+                )}
                 <ul>
                     {mergedProductItems.length > 0 ? (
                         mergedProductItems.map((item: any, index: number) => (
                             <li key={index}>
-                                <img alt="" width="100%" src={item.imageProduct} />
-                                {item.productName}  - {item.quantidade} (unit) - R${item.Price}
-                                <p
-                                    className="cursor-pointer"
-                                    onClick={() => handleRemoveItem(item.productId)}
-                                >
-                                    remove
-                                </p>
+                                <div className="minicart__d-flex">
+                                    <picture>
+                                        <img alt="" width="100%" src={item.imageProduct} />
+                                    </picture>
+                                    <div className="minicart__items-product">
+                                        <p className="minicart__description-item">
+                                            {item.productName}
+                                        </p>
+                                        <p className="minicart__description-price">${item.Price} (unit)</p>
+                                        <p className="minicart__description-quantidade">quantity: {item.quantidade} (unit)</p>
+                                        <p
+                                            className="links cursor-pointer minicart__description-remove"
+                                            onClick={() => handleRemoveItem(item.productId)}
+                                        >
+                                            remove
+                                            <span className="icon-dropdown-right"></span>
+                                        </p>
+                                    </div>
+                                </div>
                             </li>
                         ))
                     ) : (
-                        <div className="carrinhovazio">O CARRINHO ESTÁ VAZIO</div>
-                    )}
-                    {cart.length > 0 ? (
-                        <h5
-                            className="encerrar-compra cursor-pointer"
-                            onClick={() => pageProduct()}
-                        >
-                            Encerrar compra
-                        </h5>
-                    ) : (
-                        ""
+                        <div className="carrinhovazio">
+                            <h3>Your Shopping Bag</h3>
+                            <span>Your shopping bag is empty.</span>
+                            <p>For faster checkout, sign in to your account.</p>
+                            <a href="/signIn" className="links">Sign In<span className="icon-dropdown-right"></span></a>
+                        </div>
                     )}
                 </ul>
+                {cart.length > 0 ? (
+                    <h5
+                        className="encerrar-compra cursor-pointer"
+                        onClick={() => pageProduct()}
+                    >
+                        <span className="encerrar-compra-total">Estimated Total: {total}</span>Checkout
+                    </h5>
+                ) : (
+                    ""
+                )}
             </div>
         </div>
     );

@@ -1,25 +1,17 @@
-import { render, screen } from "@testing-library/react";
-import TopBar from ".";
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import TopBar from '../TopBar';
 
-describe("TopBar Component", () => {
-  test("deve renderizar o botão 'VER TODO' dentro da classe 'ver-tudo'", () => {
-    render(<TopBar />);
+test('Verifica se a topbar é exibida inicialmente', () => {
+  render(<TopBar />);
+  const topbarElement = screen.getByTestId('topbar');
+  expect(topbarElement).toBeInTheDocument();
+});
 
-    const verTodoButton = screen.getByText("VER TODO");
-
-    // Verifica se o botão 'VER TODO' está presente
-    expect(verTodoButton).toBeInTheDocument();
-
-    // Verifica se o botão 'VER TODO' está dentro da classe 'ver-tudo'
-    expect(verTodoButton).toHaveClass("ver-tudo");
-  });
-
-  test("deve renderizar o texto 'Coleção Black 20%OFF'", () => {
-    render(<TopBar />);
-
-    const colecaoBlackText = screen.getByText("20%OFF");
-
-    // Verifica se o texto 'Coleção Black 20%OFF' está presente
-    expect(colecaoBlackText).toBeInTheDocument();
-  });
+test('Verifica se a topbar é ocultada ao clicar no botão de fechar', () => {
+  render(<TopBar />);
+  const closeButton = screen.getByText('X');
+  fireEvent.click(closeButton);
+  const topbarElement = screen.queryByTestId('topbar');
+  expect(topbarElement).not.toBeInTheDocument();
 });
