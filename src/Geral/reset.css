@@ -34,7 +34,7 @@ input[type="text" i] {
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
+    width: 1px;
     height: 10px;
 }
 
@@ -98,11 +98,27 @@ button {
         display: grid;
         grid-template-columns: 27% 73%;
     }
+
+    .d-desktop {
+        display: none;
+    }
+
+    .d-mobile  {
+        display: unset;
+    }
 }
 
 @media screen and (max-width: 900px) {
     .container-patter {
         padding: 0 16px;
+    }
+
+    .d-mobile {
+        display: none;
+    }
+
+    .d-desktop {
+        display: unset;
     }
 }
 

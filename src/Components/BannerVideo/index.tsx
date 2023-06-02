@@ -1,19 +1,39 @@
 import React, { useState } from "react";
 import "./BannerVideo.css";
 import ImageClick from "../ImageClick";
+import { useWindowSize } from "../../Hooks/useWindowSize";
 
+type ArrayType = {
+  src: string;
+  poster: string;
+};
 
-const BannerVideo: React.FC = ({ }) => {
+const BannerVideo: React.FC = () => {
   const [mutedConst, setmutedConst] = useState(true);
   const [autoPlay, setAutoPlay] = useState(true);
+  const window = useWindowSize();
 
-  const handlemutedConst= () => {
+
+  const array: number | ArrayType =
+    window.width && window.width < 900
+      ? {
+        src: "//media.tiffany.com/is/content/tiffanydm/ZOE_HARDWEAR_LIKEYOUMEANIT_Desktop-1",
+        poster: "//media.tiffany.com/is/image/tiffanydm/ZOE_HARDWEAR_LIKEYOUMEANIT_Mobile-1?$tile$&amp;&amp;hei=900",
+      }
+      : {
+        src: "//media.tiffany.com/is/content/tiffanydm/ZOE_HARDWEAR_LIKEYOUMEANIT_Mobile",
+        poster: "//media.tiffany.com/is/image/tiffanydm/ZOE_HARDWEAR_LIKEYOUMEANIT_Desktop?$tile$&amp;&amp;hei=900",
+      };
+
+  const handlemutedConst = () => {
     setmutedConst(!mutedConst);
   };
 
-  const handleAutoPlay= () => {
+  const handleAutoPlay = () => {
     setAutoPlay(!autoPlay);
   };
+
+  const {src, poster } = array;
 
   return (
     <div className="container">
@@ -29,9 +49,9 @@ const BannerVideo: React.FC = ({ }) => {
           disablePictureInPicture
           preload="auto"
           data-preload="true"
-          src="//media.tiffany.com/is/content/tiffanydm/ZOE_HARDWEAR_LIKEYOUMEANIT_Mobile"
+          src={src}
           className="load-lazily b-loaded"
-          poster="//media.tiffany.com/is/image/tiffanydm/ZOE_HARDWEAR_LIKEYOUMEANIT_Desktop?$tile$&amp;&amp;hei=900"
+          poster={poster}
         ></video>
         <div className="box-video">
           <h2>This Is Tiffany HardWear</h2>
@@ -46,7 +66,7 @@ const BannerVideo: React.FC = ({ }) => {
         </div>
         <div className="box-pause-play-mute">
           <ImageClick className="groupResearch__ContactUs-img">
-            <button style={{display: "none" }} onClick={handleAutoPlay}>
+            <button style={{ display: "none" }} onClick={handleAutoPlay}>
               <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +82,7 @@ const BannerVideo: React.FC = ({ }) => {
                 </g>
               </svg>
             </button>
-            <button style={{display: "none" }} onClick={handleAutoPlay}>
+            <button style={{ display: "none" }} onClick={handleAutoPlay}>
               <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"

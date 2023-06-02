@@ -114,7 +114,7 @@ const Home: React.FC<HomeProps> = () => {
             "productId": "4378",
             "href": "https://media.tiffany.com/is/image/tiffanydm/QuickLink-HP-50-50-Product-StudEarrings-Desktop?$tile$&wid=1088&hei=1360&fmt=webp",
             "link": "https://www.tiffany.com/gifts/shop/graduation-gifts/",
-            "linkText": "Shop Now >",
+            "linkText": "Shop Now",
             "text": 'Gifts for Graduates',
             "brandImageUrl": null,
         },
@@ -122,7 +122,7 @@ const Home: React.FC<HomeProps> = () => {
             "productId": "4378",
             "href": "https://media.tiffany.com/is/image/tiffanydm/T-HP_50-50-opt6-Desktop?$tile$&wid=1088&hei=1360&fmt=webp",
             "link": "https://www.tiffany.com/jewelry/shop/tiffany-t/",
-            "linkText": "Shop Now >",
+            "linkText": "Shop Now",
             "text": 'How Do You Tiffany T?',
             "brandImageUrl": null,
         }
@@ -183,7 +183,7 @@ const Home: React.FC<HomeProps> = () => {
         {
             "href": "https://i.postimg.cc/15Cnsp4C/carta.jpg",
             "link": "https://www.tiffany.com/faq/#shipping-returns-faq/",
-            "linkText": "Learn More >",
+            "linkText": "Learn More",
             "description": "We offer complimentary shipping and returns on all Tiffany orders.",
             "text": 'Complimentary Shipping & Returns',
             "brandImageUrl": null,
@@ -191,7 +191,7 @@ const Home: React.FC<HomeProps> = () => {
         {
             "href": "https://i.postimg.cc/HkrJxVyp/sino.jpg",
             "link": "https://www.tiffany.com/customer-service/",
-            "linkText": "Contact Us >",
+            "linkText": "Contact Us",
             "description": "Our client care experts are always here to help. ",
             "text": 'Tiffany At Your Service ',
             "brandImageUrl": null,
@@ -199,7 +199,7 @@ const Home: React.FC<HomeProps> = () => {
         {
             "href": "https://i.postimg.cc/YS7XkKvz/calendario.jpg",
             "link": "https://www.tiffany.com/jewelry/shop/tiffany-t/",
-            "linkText": "Book Now >",
+            "linkText": "Book Now",
             "description": "We’re happy to help with in-store or virtual appointments.",
             "text": 'Book an Appointment',
             "brandImageUrl": null,
@@ -207,7 +207,7 @@ const Home: React.FC<HomeProps> = () => {
         {
             "href": "https://i.postimg.cc/50Vjngk0/presente.jpg",
             "link": "https://customer.jrni.com/?client=tiffany",
-            "linkText": "Explore All Gifts >",
+            "linkText": "Explore All Gifts",
             "description": "Your Tiffany purchase comes wrapped in our Blue Box packaging.",
             "text": 'The Iconic Blue Box',
             "brandImageUrl": null,
@@ -223,14 +223,14 @@ const Home: React.FC<HomeProps> = () => {
             {/* <TopBar /> */}
             <BannerVideo />
             <CarrosselBanner data={CarroselMiniBanners} buttonClassName="shop-now" buttonText="Shop Now" buttonHref="/shop-now" quantidadeItemMobile={2} quantidadeItem={4} />
-            <CarrosselBanner className="MidBanners" data={MidBanners} quantidadeItemMobile={1} quantidadeItem={4} />
+            <CarrosselBanner icon={true} className="MidBanners" data={MidBanners} quantidadeItemMobile={1} quantidadeItem={4} />
             <ShelfCustom data={data} error={error} loading={loading} text="" quantidadeItemMobile={2} quantidadeItem={4} />
             <CarrosselBanner className="ShopbyCategory" data={ShopbyCategory} text="Shop by Category" description="Brilliant design and unparalleled craftsmanship." quantidadeItemMobile={2} quantidadeItem={6} />
             <ContainerBannerMid/>
-            <CarrosselBanner className="TiffanyExperience" data={TiffanyExperience} text="The Tiffany Experience" quantidadeItemMobile={2} quantidadeItem={4} />
-            <BannerFinal flexDirection="flex-end" url={url} className="loveyourWay" title="Love Your Way" description="You’ll know who it’s for. You’ll know when it’s time. You’ll just know." textLink="Explore Love & Engagement >" Link="https://www.tiffany.com/engagement/"/>
-            <BannerFinal flexDirection="flex-start" url={url2} className="fromthesource" title="From the Source" description="Handcrafting the world’s best diamonds starts with knowing where they come from. We proudly trace 100% of our rough diamonds to known mines and sources." textLink="Follow Your Diamond’s Journey >" Link="https://www.tiffany.com/engagement/diamond-provenance/"/>
+            <BannerFinal icon={true} flexDirection="flex-end" url={url} className="loveyourWay" title="Love Your Way" description="You’ll know who it’s for. You’ll know when it’s time. You’ll just know." textLink="Explore Love & Engagement" Link="https://www.tiffany.com/engagement/"/>
+            <BannerFinal icon={true} flexDirection="flex-start" url={url2} className="fromthesource" title="From the Source" description="Handcrafting the world’s best diamonds starts with knowing where they come from. We proudly trace 100% of our rough diamonds to known mines and sources." textLink="Follow Your Diamond’s Journey" Link="https://www.tiffany.com/engagement/diamond-provenance/"/>
             <ShelfCustom data={vitrineDois} error={errorVitrineDois} loading={loadingVitrineDois} text="" quantidadeItemMobile={2} quantidadeItem={4} />
+            <CarrosselBanner icon={true} className="TiffanyExperience" data={TiffanyExperience} text="The Tiffany Experience" quantidadeItemMobile={1} quantidadeItem={4} />
             <Footer />
         </>
     );

@@ -1,7 +1,7 @@
 function index() {
     return (
       <div className="copy">
-        <p>Copyright © 2022 Elias Gabriel | Dev Front End</p>
+        <p>Copyright © 2023 Elias Gabriel | Dev Front End</p>
       </div>
     );
   }

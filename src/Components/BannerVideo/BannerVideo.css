@@ -53,6 +53,7 @@
 .box-video-mid>a {
     font-weight: 600;
     font-size: 14px;
+    line-height: 0px;
 }
 
 .box-video-mid>p {
@@ -90,5 +91,30 @@
     .container-box__video>.box-video h2,
     .container-box__video>.box-video p {
         color: #000;
+    }
+
+    .box-video-mid {
+        text-align: center;
+        align-items: center;
+        padding: 40px 34px 50px 34px;
+        max-width: 100%;
+    }
+
+    .box-video-mid h2,
+    .box-video-mid p {
+        text-align: center;
+    }
+
+    .box-video-mid h2 {
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1.5rem;
+        color: #000;
+        line-height: 1.33;
+    }
+
+    .box-video-mid p {
+        font-size: .875rem;
+        line-height: 24px;
     }
 }

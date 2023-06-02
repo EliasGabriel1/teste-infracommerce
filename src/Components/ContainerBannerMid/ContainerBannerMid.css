@@ -71,6 +71,7 @@
 
     .container-box__video>.box-video {
         color: #000;
+        padding-top: 10px;
     }
 
     .container-box__video>.box-video h2,

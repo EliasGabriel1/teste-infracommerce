@@ -49,7 +49,6 @@ body .vitrine>h3 {
 
 .list-products>picture {
     text-align: center;
-    max-width: 286px;
     width: 100%;
     min-height: 286px;
     display: flex;
@@ -124,12 +123,12 @@ button.shop-now {
 body .ShopbyCategory>h3 {
     font-weight: 600;
     font-style: normal;
-    font-size: 1.5rem ;
-    line-height:41.04px;
+    font-size: 1.5rem;
+    line-height: 41.04px;
     margin-bottom: 4px;
 }
 
-body .ShopbyCategory picture>img{
+body .ShopbyCategory picture>img {
     min-width: 192px;
     max-width: 192px;
 }
@@ -163,7 +162,7 @@ body .MidBanners>.list-products a:hover:after {
 }
 
 
-body .ShopbyCategory picture>h4  {
+body .ShopbyCategory picture>h4 {
     display: inline-block;
     margin: 0;
     box-shadow: none;
@@ -178,7 +177,8 @@ body .ShopbyCategory picture>h4  {
 }
 
 
-.loveyourWay-group-text__description,.fromthesource-group-text__description{
+.loveyourWay-group-text__description,
+.fromthesource-group-text__description {
     padding-top: 10px;
     font-size: .875rem;
     line-height: 24px;
@@ -188,25 +188,25 @@ body .ShopbyCategory picture>h4  {
     font-style: normal;
 }
 
-.TiffanyExperience.container{
+.TiffanyExperience.container {
     background-color: #fafafa;
 }
 
-.TiffanyExperience h3{
+.TiffanyExperience h3 {
     padding-top: 24px;
     margin-top: 54px;
 }
 
-.TiffanyExperience picture>img{
+.TiffanyExperience picture>img {
     max-width: 28px;
     margin-bottom: 5px;
 }
 
-.TiffanyExperience h4.text{
+.TiffanyExperience h4.text {
     padding-bottom: 9px;
 }
 
-.TiffanyExperience h4.description{
+.TiffanyExperience h4.description {
     font-size: .875rem;
     line-height: 1.71;
     padding: 0 15px;
@@ -216,4 +216,31 @@ body .ShopbyCategory picture>h4  {
     font-style: normal;
     max-width: 258px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+    .list-products>picture {
+        max-width: 286px;
+    }
+
+    .product-carousel-container.home__vitrinedeprodutos{
+        margin-top: 50px;
+    }
+
+    .ShopbyCategory.container-patter{
+        padding-top: 45px;
+    }
+
+    .ShopbyCategory.container-patter h3,
+    .ShopbyCategory.container-patter p{
+        text-align: start;
+    }
+
+    .ShopbyCategory.container-patter .handlePrev,
+    .ShopbyCategory.container-patter .handleNext{
+        background: #e5e5e590;
+        padding: 7px;
+        border-radius: 4px;
+        top: 61%;
+    }
 }

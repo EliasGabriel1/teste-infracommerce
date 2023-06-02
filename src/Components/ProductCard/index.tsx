@@ -72,6 +72,23 @@ function ProductCard(props: Props) {
         },
     ];
 
+    function removeSpacesAndPercentage(str:string) {
+        let result = str;
+      
+        // Verifica se a string contém números
+        if (/\d/.test(result)) {
+          // Adiciona uma flag no início do texto
+          result = `FLAG${result}`;
+      
+          // Remove a porcentagem
+          result = result.replace('%', '');
+          return result;
+        }
+
+        result = str.replace(/\s/g, '');
+        return result;
+      }
+
     return (
         <li className="item-product">
             <div className="Card box-item">
@@ -79,7 +96,7 @@ function ProductCard(props: Props) {
                 <div className="Card__link">
                     <span className="Card__flags">
                         {newFlag.map((flag, i) => {
-                            return (<p className={`flag ${flag.id}`} key={i + 1}>{flag.label}</p>)
+                            return (<p className={`flag ${flag.id} ${removeSpacesAndPercentage(flag.label)}`} key={i + 1}>{flag.label}</p>)
                         })}
                     </span>
                     <span className="Card__favorite" style={{ color: background, cursor: "pointer" }} onClick={() => { favoreitei() }}>

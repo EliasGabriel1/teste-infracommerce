@@ -45,3 +45,21 @@ body .loveyourWay{
     margin-top: 100px;
     margin-bottom: 80px;
 }
+
+
+@media screen and (max-width: 900px) {
+    body .fromthesourcecontainer .fromthesourcecontainer-group-text,
+    body .loveyourWay .loveyourWay-group-text{
+        max-width: 100%;
+        padding-top: 8px;
+    }
+
+    .loveyourWaycontainer{
+        padding-bottom: 56px;
+    }
+
+
+    .fromthesourcecontainer{
+        padding-bottom:20px;
+    }
+}

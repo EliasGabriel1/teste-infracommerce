@@ -1,5 +1,5 @@
 import { useWindowSize } from "../../Hooks/useWindowSize";
-import "./BannerFinal.css";
+import "./Stories.css";
 
 function BannerFinal({ className, title, textLink, data }: any) {
     const window = useWindowSize();

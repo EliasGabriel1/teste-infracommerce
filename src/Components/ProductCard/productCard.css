@@ -21,10 +21,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
     padding: 16px;
     line-height: 15.96px;
     letter-spacing: 0.04em;
@@ -39,7 +37,6 @@
 }
 
 .Card__product-brand {
-    font-family: 'Montserrat';
     margin-right: 4px;
     font-size: .875rem;
     line-height: 1.71;
@@ -50,7 +47,6 @@
 }
 
 .Card__product-name {
-    font-family: 'Montserrat';
     font-size: .875rem;
     line-height: 1.71;
     letter-spacing: normal;
@@ -59,7 +55,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     cursor: pointer;
     margin-bottom: 16px;
@@ -70,7 +65,6 @@
 }
 
 .Card__product-list-price {
-    font-family: 'Montserrat';
     font-style: italic;
     font-weight: 100;
     font-size: 14px;
@@ -80,18 +74,8 @@
     margin: 8px 0;
 }
 
-.Card__product-best-price {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 15.96px;
-    color: #FFF;
-}
-
 
 .Card__flags>.flag {
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -104,7 +88,7 @@
     position: absolute;
 }
 
-.Card__flags>.flag:first-child {
+.Card__flags>.flag.FLAG40 {
     border-radius: 50%;
     color: white;
     background: red;
@@ -114,7 +98,7 @@
     top: 3px;
 }
 
-.Card__flags>.flag:last-child {
+.Card__flags>.flag.BLACKFRIDAY {
     background-color: #000000;
     padding: 5px 10px;
     white-space: nowrap;
@@ -127,7 +111,7 @@
     max-width: 22.4vw;
 }
 
-.Card__favorite{
+.Card__favorite {
     cursor: pointer;
     position: absolute;
     left: 42px;
@@ -201,6 +185,18 @@
         margin-left: 32px;
         margin-right: 32px;
     }
+
+    .Card__product-name {
+        -webkit-line-clamp: 3;
+    }
+
+    .Card__product-best-price {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 15.96px;
+        color: #FFF;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -211,5 +207,21 @@
     .Card__product-name {
         margin-left: 16px;
         margin-right: 16px;
+    }
+
+    .Card__product-name {
+        -webkit-line-clamp: 2;
+    }
+
+    .Card__product-best-price {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15.96px;
+        color: #FFF;
+    }
+
+    .Card__comprar>button {
+        font-size: 14px;
     }
 }
